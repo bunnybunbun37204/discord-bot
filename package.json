@@ -1,0 +1,22 @@
+{
+  "name": "npminit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stonksfarm-development/discord-bot.git"
+  },
+  "author": "Game",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stonksfarm-development/discord-bot/issues"
+  },
+  "homepage": "https://github.com/stonksfarm-development/discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}
