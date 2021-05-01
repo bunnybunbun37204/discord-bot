@@ -11,3 +11,4 @@ Use this command in termianl to run bot
 ```bash
 npm run dev
 ```
+and edit in index.js file to edit your bot
