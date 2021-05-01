@@ -11,4 +11,4 @@ Use this command in termianl to run bot
 ```bash
 npm run dev
 ```
-and edit in index.js file to edit your bot
+and edit in index.js file to edit your bot and plz add your bot token in .env file before running
