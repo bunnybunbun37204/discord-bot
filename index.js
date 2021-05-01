@@ -14,4 +14,7 @@ botnaja.on('ready',()=>{
 //get user input
 botnaja.on('message',(msg)=>{
     console.log(`${msg.author.tag} : ${msg.content}`);
+    if(msg.content !== ""){
+        msg.reply("กูพูดได้ละไอ่เหี้ย");
+    }
 });
