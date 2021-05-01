@@ -13,7 +13,7 @@
     "url": "git+https://github.com/stonksfarm-development/discord-bot.git"
   },
   "author": "Game",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/stonksfarm-development/discord-bot/issues"
   },
