@@ -2,6 +2,7 @@
 ## Installation
 
 Use the package manager [npm](https://nodejs.org/en/) to install npm packages.
+And click [link] (https://discord.com/developers/applications) to create your bot and get token
 
 
 ```bash
