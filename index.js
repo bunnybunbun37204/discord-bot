@@ -24,11 +24,10 @@ botnaja.on("message", (msg) => {
       .trim()
       .substring(PREFIX_COMMAND.length)
       .split(/\s+/);
-    botnaja_command(real_command, args);
+    msg.reply(botnaja_command(real_command, args));
   }
 });
 
 const botnaja_command = (command, args) => {
-  console.log(command);
-  console.log(args);
+  if(command === 'fck') return 'ไอ้สัด!!!';
 };
