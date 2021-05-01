@@ -1,4 +1,4 @@
-require("dotenv").config();
+require('dotenv').config();
 
 const { Client } = require('discord.js');
 const botnaja = new Client();
@@ -9,4 +9,9 @@ botnaja.login(process.env.TOKEN);
 //to make sure your bot log in
 botnaja.on('ready',()=>{
     console.log('botnaja has logged in');
+});
+
+//get user input
+botnaja.on('message',(msg)=>{
+    console.log(`${msg.author.tag} : ${msg.content}`);
 });
