@@ -83,7 +83,7 @@ module.exports = {
 }
 
 const video_player = async (guild, song) => {
-    console.log('LOG TEST THIS FUNC');
+    console.log('Start video playing');
     const song_queue = queue.get(guild.id);
 
     //If no song is left in the server queue.
