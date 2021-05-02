@@ -3,6 +3,8 @@ require("dotenv").config();
 const { Client } = require("discord.js");
 const botnaja = new Client();
 const music = require("./all_bot_feature/music.js");
+const { reply } = require("./all_bot_feature/text_reply.js");
+const bot_reply = require("./all_bot_feature/text_reply.js");
 const PREFIX_COMMAND = "$"; //to make all command begins with '!'
 
 // login bot token is in .env file
@@ -40,4 +42,5 @@ botnaja.on("message", (msg) => {
     }
     music.execute(msg, args, real_command, botnaja);
   }
+  bot_reply.reply(msg,true);
 });
