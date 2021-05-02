@@ -9,22 +9,22 @@ module.exports = {
     aliases: ['skip', 'stop'], //This command in bot
     cooldown: 0,
     description: 'music bot',
-    async execute(message,args, cmd, client){
+    async execute(msg,args, command, client){
 
         console.log('START');
         //Check bot permissions
-        const voice_channel = message.member.voice.channel;
-        if (!voice_channel) return message.channel.send('เข้าห้องพูดก่อนใช้คำสั่งนี้');
-        const permissions = voice_channel.permissionsFor(message.client.user);
-        if (!permissions.has('CONNECT')) return message.channel.send('คุณไม่มีใบอนุญาตทำสิ่งนี้');
-        if (!permissions.has('SPEAK')) return message.channel.send('คุณไม่มีใบอนุญาตทำสิ่งนี้');
+        const voice_channel = msg.member.voice.channel;
+        if (!voice_channel) return msg.channel.send('เข้าห้องพูดก่อนใช้คำสั่งนี้');
+        const permissions = voice_channel.permissionsFor(msg.client.user);
+        if (!permissions.has('CONNECT')) return msg.channel.send('คุณไม่มีใบอนุญาตทำสิ่งนี้');
+        if (!permissions.has('SPEAK')) return msg.channel.send('คุณไม่มีใบอนุญาตทำสิ่งนี้');
 
         //This is our server queue.
-        const server_queue = queue.get(message.guild.id);
+        const server_queue = queue.get(msg.guild.id);
 
         //If the user has used the play command
-        if (cmd === 'play'){
-            if (!args.length) return message.channel.send('กรุณาใส่ชื่อ/ลิ้งค์เพลงที่ต้องการเล่น!!');
+        if (command === 'play'){
+            if (!args.length) return msg.channel.send('กรุณาใส่ชื่อ/ลิ้งค์เพลงที่ต้องการเล่น!!');
             let song = {};
 
             //If the first argument is a link. Set the song object to have two keys. Title and URl.
@@ -42,7 +42,7 @@ module.exports = {
                 if (video){
                     song = { title: video.title, url: video.url }
                 } else {
-                     message.channel.send('ไม่สามารถค้นหาวิดีโอได้.');
+                     msg.channel.send('ไม่สามารถค้นหาวิดีโอได้.');
                 }
             }
 
@@ -51,33 +51,33 @@ module.exports = {
 
                 const queue_constructor = {
                     voice_channel: voice_channel,
-                    text_channel: message.channel,
+                    text_channel: msg.channel,
                     connection: null,
                     songs: []
                 }
                 
                 //Add our key and value pair into the global queue.
-                queue.set(message.guild.id, queue_constructor);
+                queue.set(msg.guild.id, queue_constructor);
                 queue_constructor.songs.push(song);
     
                 //Establish a connection and play the song with the vide_player function.
                 try {
                     const connection = await voice_channel.join();
                     queue_constructor.connection = connection;
-                    video_player(message.guild, queue_constructor.songs[0]);
+                    video_player(msg.guild, queue_constructor.songs[0]);
                 } catch (err) {
-                    queue.delete(message.guild.id);
-                    message.channel.send('การเชื่อมต่อขาดหาย');
+                    queue.delete(msg.guild.id);
+                    msg.channel.send('การเชื่อมต่อขาดหาย');
                     throw err;
                 }
             } else{
                 server_queue.songs.push(song);
-                return message.channel.send(`👍 **${song.title}** ถูกเพิ่มลงในคิวแล้ว!`);
+                return msg.channel.send(`👍 **${song.title}** ถูกเพิ่มลงในคิวแล้ว!`);
             }
         }
 
-        else if(cmd === 'skip') skip_song(message, server_queue);
-        else if(cmd === 'stop') stop_song(message, server_queue);
+        else if(command === 'skip') skip_song(msg, server_queue);
+        else if(command === 'stop') stop_song(msg, server_queue);
     }
     
 }
@@ -100,16 +100,18 @@ const video_player = async (guild, song) => {
     await song_queue.text_channel.send(`🎶 กำลังเล่น **${song.title}**`)
 }
 
-const skip_song = (message, server_queue) => {
-    if (!message.member.voice.channel) return message.channel.send('เข้าห้องพูดก่อน skip เพลงนะจ๊ะ');
+const skip_song = (msg, server_queue) => {
+    if (!msg.member.voice.channel) return msg.channel.send('เข้าห้องพูดก่อน skip เพลงนะจ๊ะ');
     if(!server_queue){
-        return message.channel.send(`ไม่มีเพลงในคิว 😔`);
+        return msg.channel.send(`ไม่มีเพลงในคิว 😔`);
     }
     server_queue.connection.dispatcher.end();
+    msg.channel.send('ข้ามไปเพลงถัดไป');
 }
 
-const stop_song = (message, server_queue) => {
-    if (!message.member.voice.channel) return message.channel.send('เข้าห้องพูดก่อนหยุดเพลงนะจ๊ะ');
+const stop_song = (msg, server_queue) => {
+    if (!msg.member.voice.channel) return msg.channel.send('เข้าห้องพูดก่อนหยุดเพลงนะจ๊ะ');
     server_queue.songs = [];
     server_queue.connection.dispatcher.end();
+    msg.channel.send('เพลงถูกหยุดเล่นแล้ว');
 }
