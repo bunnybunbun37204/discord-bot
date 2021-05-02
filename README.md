@@ -12,6 +12,9 @@ npm i
 ```bash
 npm run dev
 ```
-and edit in index.js file to edit your bot and plz add your bot token in .env file before running
+
+## Edit bot feature
+1. Edit index.js to edit bot controller
+2. Edit in /all_bot_feature to add your feature file and you can edit feature file to edit my feature if you want
 
 hope you will be happy -Bunyawat
