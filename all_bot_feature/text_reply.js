@@ -8,6 +8,7 @@ module.exports = {
   cooldown: 0,
   description: "auto reply",
   reply(msg, isActive) {
+    console.log('TEXT REPLY STARTED');
     aimlParser.getResult(msg.content, (answer, wildCardArray, input) => {
         msg.reply(answer);
         console.log(`wildcard array is ${wildCardArray}`);

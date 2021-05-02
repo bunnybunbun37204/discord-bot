@@ -42,5 +42,7 @@ botnaja.on("message", (msg) => {
     }
     music.execute(msg, args, real_command, botnaja);
   }
-  bot_reply.reply(msg,true);
+  else{
+    bot_reply.reply(msg,true);
+  }
 });
