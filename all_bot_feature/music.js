@@ -6,7 +6,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'play',
-    aliases: ['skip', 'stop'], //This command in bot
+    bot_command: ['skip', 'stop','play'], //This command in bot
     cooldown: 0,
     description: 'music bot',
     async execute(msg,args, command, client){
