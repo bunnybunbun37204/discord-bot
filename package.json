@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/stonksfarm-development/discord-bot#readme",
   "dependencies": {
+    "aimlinterpreter": "^0.1.7",
+    "aimlparser": "^1.0.5",
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.3.0",
