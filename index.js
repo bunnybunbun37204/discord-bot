@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const { Client } = require("discord.js");
 const botnaja = new Client();
-const music = require("./music");
+const music = require("./all_bot_feature/music.js");
 const PREFIX_COMMAND = "$"; //to make all command begins with '!'
 
 // login bot token is in .env file
