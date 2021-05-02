@@ -1,3 +1,5 @@
+// Coding a Bot with discord.js
+// Discord Bots
 require("dotenv").config();
 
 const { Client } = require("discord.js");
