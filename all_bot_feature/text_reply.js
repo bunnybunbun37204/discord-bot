@@ -1,7 +1,6 @@
 const AIMLParser = require("aimlparser");
 const aimlParser = new AIMLParser({ name:'BotNAJA' })
-aimlParser.load(['./aimlfile.xml']);
-
+aimlParser.load(['aimlfile.xml']);
 module.exports = {
   name: "reply",
   bot_command: [], //This command in bot
