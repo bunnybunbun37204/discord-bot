@@ -2,7 +2,8 @@ require("dotenv").config();
 
 const { Client } = require("discord.js");
 const botnaja = new Client();
-const PREFIX_COMMAND = "!"; //to make all command begins with '!'
+const music = require("./play");
+const PREFIX_COMMAND = "$"; //to make all command begins with '!'
 
 // login bot token is in .env file
 botnaja.login(process.env.TOKEN);
@@ -20,14 +21,17 @@ botnaja.on("message", (msg) => {
     msg.reply("อะหิ อะหิ");
   }
   if (msg.content.startsWith(PREFIX_COMMAND)) {
+    
     const [real_command, ...args] = msg.content
       .trim()
       .substring(PREFIX_COMMAND.length)
       .split(/\s+/);
-    msg.reply(botnaja_command(real_command, args));
+    //msg.reply(botnaja_command(real_command, args));
+    music.execute(msg,args,real_command,botnaja);
   }
 });
 
 const botnaja_command = (command, args) => {
-  if(command === 'fck') return 'ไอ้สัด!!!';
+  if (command === "fck") return "ไอ้สัด!!!";
+  else if (command === "yed") return "ไอภู โดนเย็ดโบง";
 };
