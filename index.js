@@ -27,7 +27,6 @@ botnaja.on("message", (msg) => {
       .substring(PREFIX_COMMAND.length)
       .split(/\s+/);
     //msg.reply(botnaja_command(real_command, args));
-    music.execute(msg, args, real_command, botnaja);
     if (real_command === "help") {
       msg.reply(
         `คำสั่ง ทั้งหมดมีดังนี้
@@ -40,5 +39,6 @@ botnaja.on("message", (msg) => {
     } else {
       msg.reply("สามารถพิมพ์ $help เพื่อดูคำสั่งทั้งหมด");
     }
+    music.execute(msg, args, real_command, botnaja);
   }
 });

@@ -14,7 +14,7 @@ module.exports = {
         console.log('START');
         //Check bot permissions
         const voice_channel = msg.member.voice.channel;
-        if (!voice_channel) return msg.channel.send('เข้าห้องพูดก่อนใช้คำสั่งนี้');
+        if (!voice_channel) return msg.channel.send('เข้าห้องพูดก่อนใช้คำสั่งเกี่ยวกับเพลง');
         const permissions = voice_channel.permissionsFor(msg.client.user);
         if (!permissions.has('CONNECT')) return msg.channel.send('คุณไม่มีใบอนุญาตทำสิ่งนี้');
         if (!permissions.has('SPEAK')) return msg.channel.send('คุณไม่มีใบอนุญาตทำสิ่งนี้');
