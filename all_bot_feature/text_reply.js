@@ -9,9 +9,9 @@ module.exports = {
         msg.channel.send("My Bot's message", {
           files: ["https://sv1.picz.in.th/images/2021/05/02/Aar3FQ.jpg"],
         });
+      }
       else if (msg.content === 'สวัสดีค้าบ') {
         msg.reply('ท่านสมาชิกชมรม');
-      }
       }
     }
   },
