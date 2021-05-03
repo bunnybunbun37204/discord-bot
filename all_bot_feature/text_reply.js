@@ -4,10 +4,12 @@ module.exports = {
   cooldown: 0,
   description: "auto reply",
   reply(msg, isActive) {
-    if (msg.content === "testpic") {
-      msg.channel.send("My Bot's message", {
-        files: ["https://sv1.picz.in.th/images/2021/05/02/Aar3FQ.jpg"],
-      });
+    if(isActive){
+      if (msg.content === "testpic") {
+        msg.channel.send("My Bot's message", {
+          files: ["https://sv1.picz.in.th/images/2021/05/02/Aar3FQ.jpg"],
+        });
+      }
     }
   },
 };
