@@ -3,7 +3,7 @@ let p = path.join('./assets','test-aiml.xml');
 console.log(p);
 const AIMLParser = require('aimlparser');
 const aimlParser = new AIMLParser({ name:'BotNAJA' });
-aimlParser.load(['./assets/test-aiml.xml']);
+aimlParser.load([p]);
 
 module.exports = {
   name: "reply",
