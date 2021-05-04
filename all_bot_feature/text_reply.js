@@ -1,3 +1,7 @@
+const AIMLParser = require('aimlparser');
+const aimlParser = new AIMLParser({ name:'BotNAJA' });
+aimlParser.load(['./assets/test-aiml.xml']);
+
 module.exports = {
   name: "reply",
   bot_command: [], //This command in bot
@@ -5,14 +9,11 @@ module.exports = {
   description: "auto reply",
   reply(msg, isActive) {
     if(isActive){
-      if (msg.content === "testpic") {
-        msg.channel.send("My Bot's message", {
-          files: ["https://sv1.picz.in.th/images/2021/05/02/Aar3FQ.jpg"],
-        });
-      }
-      else if (msg.content === 'สวัสดีค้าบ') {
-        msg.reply('ท่านสมาชิกชมรม');
-      }
+      aimlParser.getResult(msg.content, (answer, wildCardArray, input) => {
+         msg.reply(answer);
+         console.log(input);
+         console.log(wildCardArray);
+     })
     }
   },
 };
