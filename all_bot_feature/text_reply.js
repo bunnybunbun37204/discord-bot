@@ -1,10 +1,3 @@
-const path = require('path');
-let p = path.join('./assets','test-aiml.xml');
-console.log(p);
-const AIMLParser = require('aimlparser');
-const aimlParser = new AIMLParser({ name:'BotNAJA' });
-aimlParser.load(['/'+p]);
-
 module.exports = {
   name: "reply",
   bot_command: [], //This command in bot
