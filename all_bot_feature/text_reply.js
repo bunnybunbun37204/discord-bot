@@ -15,7 +15,8 @@ export default class ReplyMSg {
 
 const encodeData = data => {
   const sentences = data.map(comment => comment.text.toLowerCase());
-  const trainingData = use.load()
+  try{
+    const trainingData = use.load()
       .then(model => {
           return model.embed(sentences)
               .then(embeddings => {
@@ -23,8 +24,12 @@ const encodeData = data => {
               });
       })
       .catch(err => console.error('Fit Error:', err));
-
-  return trainingData
+  }
+  catch (err){
+    console.log(`error is ${err}`);
+  }
+  
+  return trainingData;
 };
 
 const outputData = tf.tensor2d(train.map(value => [
