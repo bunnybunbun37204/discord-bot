@@ -1,11 +1,11 @@
 // Coding a Bot with discord.js
 // Discord Bots
+import ReplyMSg from './all_bot_feature/text_reply.js';
 require("dotenv").config();
 
 const { Client } = require("discord.js");
 const botnaja = new Client();
 const music = require("./all_bot_feature/music.js");
-const bot_reply = require("./all_bot_feature/text_reply.js");
 const PREFIX_COMMAND = "$"; //to make all command begins with '!'
 
 // login bot token is in .env file
@@ -44,6 +44,6 @@ botnaja.on("message", (msg) => {
     music.execute(msg, args, real_command, botnaja);
   }
   else{
-    bot_reply.reply(msg,true);
+    const botnaja_reply = new ReplyMSg(msg);
   }
 });
