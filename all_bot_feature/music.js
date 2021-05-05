@@ -4,11 +4,7 @@ import ytSearch from 'yt-search';
 //Global queue for your bot
 const queue = new Map();
 
-module.exports = {
-    name: 'play',
-    bot_command: ['skip', 'stop','play'], //This command in bot
-    cooldown: 0,
-    description: 'music bot',
+export default class music {
     async execute(msg,args, command, client){
 
         console.log('START');
@@ -81,7 +77,6 @@ module.exports = {
     }
     
 }
-
 const video_player = async (guild, song) => {
     console.log('Start video playing');
     const song_queue = queue.get(guild.id);
