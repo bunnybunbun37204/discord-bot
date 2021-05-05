@@ -1,5 +1,5 @@
-const ytdl = require('ytdl-core');
-const ytSearch = require('yt-search');
+import ytdl from 'ytdl-core';
+import ytSearch from 'yt-search';
 
 //Global queue for your bot
 const queue = new Map();

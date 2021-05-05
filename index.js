@@ -1,12 +1,13 @@
 // Coding a Bot with discord.js
 // Discord Bots
+import { Client } from 'discord.js';
 import ReplyMSg from './all_bot_feature/text_reply.js';
-require("dotenv").config();
+import music from './all_bot_feature/music.js'
+import dotenv from 'dotenv';
+dotenv.config();
 
-const { Client } = require("discord.js");
 const botnaja = new Client();
-const music = require("./all_bot_feature/music.js");
-const PREFIX_COMMAND = "$"; //to make all command begins with '!'
+const PREFIX_COMMAND = "$"; //to make all command begins with '$'
 
 // login bot token is in .env file
 botnaja.login(process.env.TOKEN);
