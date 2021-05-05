@@ -1,0 +1,12 @@
+{
+    "positive": [
+        "This is great, so cool!",
+        "Wow, I love it!",
+        "It really is amazing"
+    ],
+    "negative": [
+        "This is really bad",
+        "I hate it with a passion",
+        "Just terrible!"
+    ]
+}
