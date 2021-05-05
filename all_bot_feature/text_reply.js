@@ -27,9 +27,9 @@ const encodeData = data => {
   return trainingData
 };
 
-const outputData = tf.tensor2d(comments.map(comment => [
-  comment.intent === 'buy' ? 1 : 0,
-  comment.intent === 'none' ? 1 : 0,
+const outputData = tf.tensor2d(train.map(value => [
+  value.intent === 'buy' ? 1 : 0,
+  value.intent === 'none' ? 1 : 0,
 ]));
 
 const model = tf.sequential();
@@ -61,8 +61,8 @@ model.compile({
 
 function run() {
   Promise.all([
-      encodeData(comments),
-      encodeData(comment_testing)
+      encodeData(train),
+      encodeData(test)
   ])
   .then(data => {
       const {
