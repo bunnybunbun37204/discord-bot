@@ -15,7 +15,7 @@ botnaja.login(process.env.TOKEN);
 
 //to make sure your bot log in
 botnaja.on("ready", () => {
-  console.log("botnaja has logged in");
+  console.log("Botnaja has logged in");
 });
 
 //get user input
