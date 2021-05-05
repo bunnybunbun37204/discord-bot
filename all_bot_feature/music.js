@@ -4,8 +4,9 @@ import ytSearch from 'yt-search';
 //Global queue for your bot
 const queue = new Map();
 
-export default class music {
-    async static execute(msg,args, command, client){
+export default class Play {
+
+    async execute(msg,args, command, client){
 
         console.log('START');
         //Check bot permissions

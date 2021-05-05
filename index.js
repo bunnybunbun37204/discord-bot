@@ -2,12 +2,13 @@
 // Discord Bots
 import { Client } from 'discord.js';
 import ReplyMSg from './all_bot_feature/text_reply.js';
-import music from './all_bot_feature/music.js'
+import Play from './all_bot_feature/music.js'
 import dotenv from 'dotenv';
 dotenv.config();
 
 const botnaja = new Client();
 const PREFIX_COMMAND = "$"; //to make all command begins with '$'
+const music = new Play();
 
 // login bot token is in .env file
 botnaja.login(process.env.TOKEN);
