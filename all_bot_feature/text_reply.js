@@ -13,7 +13,6 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 const database = firebase.database();
 database.ref('customPath').once('value')
   .then(function (snapshot) {
