@@ -1,0 +1,38 @@
+[
+    {
+        "text": "buy",
+        "intent": "buy"
+    },
+    {
+        "text": "buying",
+        "intent": "buy"
+    },
+    {
+        "text": "purchase",
+        "intent": "buy"
+    },
+    {
+        "text": "buy that",
+        "intent": "buy"
+    },
+    {
+        "text": "buy this",
+        "intent": "buy"
+    },
+    {
+        "text": "buy it",
+        "intent": "buy"
+    },
+    {
+        "text": "where to buy",
+        "intent": "buy"
+    },
+    {
+        "text": "where can I buy that",
+        "intent": "buy"
+    },
+    {
+        "text": "how much",
+        "intent": "buy"
+    }
+]
