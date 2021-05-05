@@ -6,7 +6,7 @@ const queue = new Map();
 
 export default class Play {
 
-    async execute(msg,args, command, client){
+    async execute(msg,args,command,client){
 
         console.log('START');
         //Check bot permissions
