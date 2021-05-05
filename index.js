@@ -46,6 +46,6 @@ botnaja.on("message", (msg) => {
     music.execute(msg, args, real_command, botnaja);
   }
   else{
-    const botnaja_reply = new ReplyMSg(msg);
+    //const botnaja_reply = new ReplyMSg(msg);
   }
 });
