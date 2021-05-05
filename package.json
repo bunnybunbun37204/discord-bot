@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/stonksfarm-development/discord-bot#readme",
   "dependencies": {
+    "@tensorflow/tfjs": "^3.6.0",
+    "@tensorflow/tfjs-node": "^3.6.1",
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.3.0",
