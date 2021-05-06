@@ -68,7 +68,6 @@ botnaja.on("message", (msg) => {
   log_data.push(new_log_data);
   console.log('add data complete');
   if(msg.content === 'log'){
-    msg.reply(log_data);
     console.log(log_data);
   }
 });
