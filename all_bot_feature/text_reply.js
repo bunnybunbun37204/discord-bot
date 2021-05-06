@@ -29,7 +29,7 @@ const answer = id => {
 }
 
 data_classifier(data);
-console.log(find_id_injson('bye'));
+
 
 export default class ReplyMSg {
   constructor() {
