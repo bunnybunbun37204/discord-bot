@@ -21,10 +21,9 @@ const find_id_injson = (type) => {
         memo[type] = i;
         return i;
       }
-      console.log('memory is ' + memo);
     }
   }
-
+  console.log('memory is ' + memo);
 }
 
 const answer = id => {
