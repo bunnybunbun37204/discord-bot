@@ -1,11 +1,11 @@
 import Fasttext from 'fasttext.js';
 // import { readFile } from 'fs/promises';
 // const data = JSON.parse(await readFile(new URL('./assets/data.json',import.meta.url)));
-const MODELS_ROOT = __dirname + '/models';
-const DATASET_ROOT = __dirname + '/datasets';
+var MODELS_ROOT = __dirname + '/models';
+var DATASET_ROOT = __dirname + '/datasets';
 
-const TRAINFILE = process.env.TRAINFILE || DATASET_ROOT + '/dataset.tsv'
-const SERIALIZETO = process.env.SERIALIZETO || MODELS_ROOT + '/first_model' // do not specify ext: 'bin' will be added
+var TRAINFILE = process.env.TRAINFILE || DATASET_ROOT + '/dataset.tsv'
+var SERIALIZETO = process.env.SERIALIZETO || MODELS_ROOT + '/first_model' // do not specify ext: 'bin' will be added
 
 const fastText = new Fasttext({
   debug: true,
@@ -44,8 +44,8 @@ const fastText = new Fasttext({
     t: 0.0001,
     pretrainedVectors: process.env.WORD2VEC || ''
   },
-  serializeTo: './models',
-  trainFile: './assets/dataset.txt',
+  serializeTo: SERIALIZETO,
+  trainFile: TRAINFILE,
   trainCallback: function (res) {
     console.log("\t" + JSON.stringify(res));
   }
