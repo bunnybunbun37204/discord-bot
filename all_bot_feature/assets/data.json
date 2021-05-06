@@ -2,7 +2,7 @@
     "type": [
         {
             "name": "greeting",
-            "keywords": "hello hi what's up good morning สวัสดี",
+            "keywords": "hello hi what's up good morning สวัสดี หวัดดี good afternoon Hello Hi",
             "answer": [
                 "hello",
                 "สวัสดี",
@@ -14,7 +14,7 @@
         },
         {
             "name": "bye",
-            "keywords": "Bye bye good bye ลาก่อน ไปละนะ",
+            "keywords": "Bye bye good bye ลาก่อน ไปละนะ see you later byeee Good Bye",
             "answer": [
                 "Bye",
                 "Good bye",
@@ -22,6 +22,16 @@
                 "see ya!!",
                 "ลาก่อน",
                 "บ๊ายบาย"
+            ]
+        },
+        {
+            "name": "bot's namae_question",
+            "keywords": "ชื่ออะไร ชื่อ Name name",
+            "answer": [
+                "ฉันชื่อ BotNaJA",
+                "BotNAJA ไงล่ะ ลืมได้ไง...",
+                "I'm BotNAJA",
+                "My name is BotNAJA"
             ]
         }
     ]
