@@ -11,7 +11,6 @@ const botnaja_reply = new ReplyMSg();
 const PREFIX_COMMAND = "$"; //to make all command begins with '$'
 const music = new Play();
 let isActive = false;
-let log_data = []; //just test
 
 // login bot token is in .env file
 botnaja.login(process.env.TOKEN);
@@ -61,13 +60,5 @@ botnaja.on("message", (msg) => {
   }
   else{
     botnaja_reply.replyMsg(msg,isActive);
-  }
-  let author = msg.author.tag;
-  let content = msg.content;
-  let new_log_data = {author:author,content:content};
-  log_data.push(new_log_data);
-  console.log('add data complete');
-  if(msg.content === 'log'){
-    console.log(log_data);
   }
 });
