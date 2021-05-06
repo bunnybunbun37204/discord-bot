@@ -33,23 +33,27 @@ botnaja.on("message", (msg) => {
       .substring(PREFIX_COMMAND.length)
       .split(/\s+/);
     //msg.reply(botnaja_command(real_command, args));
+    music.execute(msg, args, real_command, botnaja);
     if (real_command === "help") {
       msg.reply(
         `คำสั่ง ทั้งหมดมีดังนี้
         \n1. ***$help*** เพื่อดูคำสั่งทั้งหมด
         \n2. ***$play <music link or music name>*** เพื่อเล่นเพลงที่ต้องการ และเพิ่มเพลงในคิว 
         \n3. ***$stop*** เพือหยุดเพลง
-        \n4. ***$skip*** เพื่อข้ามไปเล่นเพลงถัดไป`
+        \n4. ***$skip*** เพื่อข้ามไปเล่นเพลงถัดไป
+        \n5 ***สนใจพัฒนา BotNAJA สามารถกดลิ้งค https://github.com/stonksfarm-development/discord-bot`
         
       );
     } 
     else if(real_command === 'activeBotReply'){
       isActive = true;
     }
+    else if(real_command === 'inactiveBotReply'){
+      isActive = false;
+    }
     else {
       msg.reply("สามารถพิมพ์ $help เพื่อดูคำสั่งทั้งหมด");
     }
-    music.execute(msg, args, real_command, botnaja);
   }
   else{
     botnaja_reply.replyMsg(msg,isActive);
