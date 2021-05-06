@@ -4,6 +4,7 @@ import { readFile } from 'fs/promises';
 const datas = JSON.parse(await readFile(new URL('./assets/data.json', import.meta.url)));
 const whichX = new WhichX();
 const data = datas['type'];
+let memo = {};
 
 const data_classifier = data => {
   for (let i = 0; i < data.length; i++) {
@@ -12,15 +13,18 @@ const data_classifier = data => {
   }
 }
 
-const find_id_injson = (type,memo={}) => {
-  if(type in memo) return memo[type];
-  for (let i = 0; i < data.length; i++) {
-    if(data[i]['name'] === type){
-      memo[type] = i;
-      return i;
+const find_id_injson = (type) => {
+  if (type in memo) return memo[type];
+  else {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i]['name'] === type) {
+        memo[type] = i;
+        return i;
+      }
+      console.log('memory is ' + memo);
     }
-    console.log('memory is ' +memo);
   }
+
 }
 
 const answer = id => {
@@ -29,7 +33,6 @@ const answer = id => {
 }
 
 data_classifier(data);
-
 
 export default class ReplyMSg {
   constructor() {
