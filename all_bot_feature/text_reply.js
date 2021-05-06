@@ -1,6 +1,11 @@
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import Fasttext from 'fasttext.js';
 // import { readFile } from 'fs/promises';
 // const data = JSON.parse(await readFile(new URL('./assets/data.json',import.meta.url)));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 var MODELS_ROOT = __dirname + '/models';
 var DATASET_ROOT = __dirname + '/datasets';
 
