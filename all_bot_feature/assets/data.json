@@ -1,10 +1,12 @@
 {
-    "data": [
-        "cat",
-        "dog",
-        "fish",
-        "horse",
-        "bird",
-        "reptile"
+    "type": [
+        {
+            "name":"greeting",
+            "description" :"hello hi what's up good morning สวัสดี"
+        },
+        {
+            "name":"bye",
+            "description" :"Bye bye good bye"
+        }
     ]
 }
