@@ -64,10 +64,11 @@ botnaja.on("message", (msg) => {
   }
   let author = msg.author.tag;
   let content = msg.content;
-  let new_log_data = {author:content};
+  let new_log_data = {author:author,content:content};
   log_data.push(new_log_data);
   console.log('add data complete');
   if(msg.content === 'log'){
+    msg.reply(log_data);
     console.log(log_data);
   }
 });
