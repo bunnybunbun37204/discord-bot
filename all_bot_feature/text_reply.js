@@ -12,11 +12,14 @@ const data_classifier = data => {
   }
 }
 
-const find_id_injson = type => {
+const find_id_injson = (type,memo={}) => {
+  if(type in memo) return memo[type];
   for (let i = 0; i < data.length; i++) {
     if(data[i]['name'] === type){
+      memo[type] = i;
       return i;
     }
+    console.log('memory is ' +memo);
   }
 }
 
@@ -26,6 +29,7 @@ const answer = id => {
 }
 
 data_classifier(data);
+console.log(find_id_injson('bye'));
 
 export default class ReplyMSg {
   constructor() {
