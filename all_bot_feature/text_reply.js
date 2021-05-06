@@ -42,7 +42,7 @@ export default class ReplyMSg {
       let ans_list = answer(find_id_injson(type));
       const index = Math.floor(Math.random() * ans_list.length);
       msg.reply(ans_list[index]);
-      console.log(memo);
+      console.log('memory data is '+memo);
     }
     else {
       console.log('the bot is inactive status');
