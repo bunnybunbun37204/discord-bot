@@ -13,12 +13,13 @@ const data_classifier = data => {
 }
 data_classifier(data);
 
-let text = whichX.classify("Hello how are you");
-console.log("It's a " + text + " type");
-
 export default class ReplyMSg {
-  constructor(msg) {
-    this.msg = msg;
+  constructor() {
+    console.log('function reply can be used');
+  }
+  replyMsg(msg,isActive){
+    let answer = whichX.classify(msg.content);
+    console.log('the type of sentence is ' + answer);
   }
 }
 

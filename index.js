@@ -7,8 +7,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const botnaja = new Client();
+const botnaja_reply = new ReplyMSg();
 const PREFIX_COMMAND = "$"; //to make all command begins with '$'
 const music = new Play();
+let isActive = false;
 
 // login bot token is in .env file
 botnaja.login(process.env.TOKEN);
@@ -40,12 +42,16 @@ botnaja.on("message", (msg) => {
         \n4. ***$skip*** เพื่อข้ามไปเล่นเพลงถัดไป`
         
       );
-    } else {
+    } 
+    else if(real_command === 'activeBotReply'){
+      isActive = true;
+    }
+    else {
       msg.reply("สามารถพิมพ์ $help เพื่อดูคำสั่งทั้งหมด");
     }
     music.execute(msg, args, real_command, botnaja);
   }
   else{
-    //const botnaja_reply = new ReplyMSg(msg);
+    botnaja_reply.replyMsg(msg,isActive);
   }
 });
