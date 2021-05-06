@@ -1,12 +1,28 @@
 {
     "type": [
         {
-            "name":"greeting",
-            "description" :"hello hi what's up good morning สวัสดี"
+            "name": "greeting",
+            "description": "hello hi what's up good morning สวัสดี",
+            "answer": [
+                "hello",
+                "สวัสดี",
+                "ว่าไง",
+                "Hi there",
+                "Hi",
+                "Hi bro!!"
+            ]
         },
         {
-            "name":"bye",
-            "description" :"Bye bye good bye"
+            "name": "bye",
+            "description": "Bye bye good bye ลาก่อน ไปละนะ",
+            "answer": [
+                "Bye",
+                "Good bye",
+                "Bye bye",
+                "see ya!!",
+                "ลาก่อน",
+                "บ๊ายบาย"
+            ]
         }
     ]
 }
