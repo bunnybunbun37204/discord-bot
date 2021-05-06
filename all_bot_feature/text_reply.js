@@ -17,6 +17,7 @@ const find_id_injson = (type) => {
   if (type in memo) return memo[type];
   else {
     for (let i = 0; i < data.length; i++) {
+      console.log('using for loop');
       if (data[i]['name'] === type) {
         memo[type] = i;
         return i;
