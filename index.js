@@ -47,9 +47,12 @@ botnaja.on("message", (msg) => {
     }
     else if(real_command === 'activeBotReply'){
       isActive = true;
+      msg.channel.send(`ฟังก์ชันตอบโต้กับผู้ใช้งานทำงานแล่ว!!!
+                      \n สามารถใช้คำสั่ง ***inactiveBotReply เพื่อหยุดการใช้งาน`);
     }
     else if(real_command === 'inactiveBotReply'){
       isActive = false;
+      msg.channel.send('ฟังก์ชันตอบโต้กับผู้ใช้งานได้หยุดลง!');
     }
     else {
       msg.reply("สามารถพิมพ์ $help เพื่อดูคำสั่งทั้งหมด");
