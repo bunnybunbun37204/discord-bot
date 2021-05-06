@@ -2,7 +2,7 @@
     "type": [
         {
             "name": "greeting",
-            "description": "hello hi what's up good morning สวัสดี",
+            "keywords": "hello hi what's up good morning สวัสดี",
             "answer": [
                 "hello",
                 "สวัสดี",
@@ -14,7 +14,7 @@
         },
         {
             "name": "bye",
-            "description": "Bye bye good bye ลาก่อน ไปละนะ",
+            "keywords": "Bye bye good bye ลาก่อน ไปละนะ",
             "answer": [
                 "Bye",
                 "Good bye",

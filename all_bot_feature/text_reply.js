@@ -8,7 +8,7 @@ const data = datas['type'];
 const data_classifier = data => {
   for (let i = 0; i < data.length; i++) {
     whichX.addLabels(data[i]['name']);
-    whichX.addData(data[i]['name'], data[i]['description']);
+    whichX.addData(data[i]['name'], data[i]['keywords']);
   }
 }
 
