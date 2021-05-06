@@ -41,7 +41,7 @@ botnaja.on("message", (msg) => {
         \n2. ***$play <music link or music name>*** เพื่อเล่นเพลงที่ต้องการ และเพิ่มเพลงในคิว 
         \n3. ***$stop*** เพือหยุดเพลง
         \n4. ***$skip*** เพื่อข้ามไปเล่นเพลงถัดไป
-        \n5 ***สนใจพัฒนา BotNAJA สามารถกดลิ้งค https://github.com/stonksfarm-development/discord-bot`
+        \n5 ***สนใจพัฒนา BotNAJA*** สามารถกดลิ้งค https://github.com/stonksfarm-development/discord-bot`
         
       );
     } 
