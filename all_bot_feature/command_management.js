@@ -23,7 +23,7 @@ export default class Command {
         \n4. ***$skip*** เพื่อข้ามไปเล่นเพลงถัดไป
         \n5. ***$kick <user id>*** เพื่อเตะสมาชิก
         \n6 ***$ban <user id>*** เพื่อแบนสมาชิก
-        \n5. ***สนใจพัฒนา BotNAJA*** สามารถกดลิ้งค https://github.com/stonksfarm-development/discord-bot`
+        \n5. ***สนใจพัฒนา BotNAJA*** สามารถกดลิ้งค https://github.com/bunnybunbun37204/discord-bot`
                 );
             }
             else if (real_command === 'play' || real_command === 'skip' || real_command === 'stop') {
