@@ -1,9 +1,9 @@
 export default class UserManagement {
-    excute(msg, args) {
-        if (msg.content === 'kick') {
+    excute(msg, command, args) {
+        if (command === 'kick') {
             this.kickUser(msg, args);
         }
-        else if (msg.content === 'band') {
+        else if (command === 'band') {
             this.banUser(msg, args);
         }
     }
