@@ -35,7 +35,7 @@ export default class Command {
                 return msg.reply('You do not have permissions to use that command');
             if (args.length === 0)
                 return msg.reply('Please provide an ID');
-            const member = msg.guild.members.cache.get(args[0]);
+            let member = msg.guild.members.cache.get(args[0]);
             if (member) {
                 member
                     .kick()
