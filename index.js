@@ -28,7 +28,7 @@ botnaja.on("message", (msg) => {
   }
   if (msg.content.startsWith(PREFIX_COMMAND)) {
     command_management.command(botnaja,msg,PREFIX_COMMAND);
-    let mem = msg.guild.members.cache.get('801807945166880808')
+    let mem = msg.guild.members.cache.get('235088799074484224');
     console.log(mem);
   }
   else{
