@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stonksfarm-development/discord-bot.git"
+    "url": "git+https://github.com/bunnybunbun37204/discord-bot.git"
   },
   "author": "Game",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stonksfarm-development/discord-bot/issues"
+    "url": "https://github.com/bunnybunbun37204/discord-bot/issues"
   },
-  "homepage": "https://github.com/stonksfarm-development/discord-bot#readme",
+  "homepage": "https://github.com/bunnybunbun37204/discord-bot#readme",
   "dependencies": {
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
