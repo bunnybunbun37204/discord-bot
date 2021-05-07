@@ -36,7 +36,7 @@ export default class Command {
                 msg.channel.send('ฟังก์ชันตอบโต้กับผู้ใช้งานได้หยุดลง!');
             }
             else if (real_command === 'kick' || real_command === 'ban') {
-                user_management.command(msg, args)
+                user_management.excute(msg, args);
             }
             else {
                 msg.reply("สามารถพิมพ์ $help เพื่อดูคำสั่งทั้งหมด");

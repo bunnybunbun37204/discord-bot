@@ -1,5 +1,5 @@
 export default class UserManagement {
-    command(msg, args) {
+    excute(msg, args) {
         if (msg.content === 'kick') {
             this.kickUser(msg, args);
         }
