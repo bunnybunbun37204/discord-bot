@@ -2,14 +2,12 @@
 // Discord Bots
 import { Client } from 'discord.js';
 import dotenv from 'dotenv';
-import ReplyMSg from './all_bot_feature/text_reply.js';
 import Command from './all_bot_feature/command_management.js';
-dotenv.config();
 
+dotenv.config();
+const command_management = new Command();
 const botnaja = new Client();
 const PREFIX_COMMAND = "$"; //to make all command begins with '$'
-const botnaja_reply = new ReplyMSg();
-const command_management = new Command();
 
 // login bot token is in .env file
 botnaja.login(process.env.TOKEN);
@@ -26,10 +24,5 @@ botnaja.on("message", (msg) => {
   if (msg.content === "test4263") {
     msg.reply("อะหิ อะหิ");
   }
-  if (msg.content.startsWith(PREFIX_COMMAND)) {
-    command_management.command(botnaja,msg,PREFIX_COMMAND);
-  }
-  else{
-    botnaja_reply.replyMsg(msg,command_management.GetIsActive());
-  }
+  command_management.command(botnaja, msg, PREFIX_COMMAND);
 });
