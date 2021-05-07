@@ -36,8 +36,6 @@ export default class Command {
             if (args.length === 0)
                 return msg.reply('Please provide an ID');
             const member = msg.guild.members.cache.get(args[0]);
-            console.log(args[0]);
-            console.log(member);
             if (member) {
                 member
                     .kick()

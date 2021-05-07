@@ -28,8 +28,7 @@ botnaja.on("message", (msg) => {
   }
   if (msg.content.startsWith(PREFIX_COMMAND)) {
     command_management.command(botnaja,msg,PREFIX_COMMAND);
-    const member = msg.guild.members.cache.get('532542678873931777');
-    console.log(member);
+    console.log(msg.guild.members.cache.get('801807945166880808'));
   }
   else{
     botnaja_reply.replyMsg(msg,command_management.GetIsActive());
