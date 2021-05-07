@@ -9,29 +9,29 @@ export default class UserManagement {
     }
     kickUser(msg, args) {
         if (!msg.member.hasPermission('KICK_MEMBERS'))
-            return msg.reply('You do not have permissions to use that command');
+            return msg.reply('คุณไม่ได้รับการอนุญาตให้ใช้คำสั่งนี้');
         if (args.length === 0)
-            return msg.reply('Please provide an ID');
+            return msg.reply('กรุณาใส่ ID');
         let member = msg.guild.members.cache.get(args[0]);
         if (member) {
             member
                 .kick()
-                .then((member) => msg.channel.send(`${member} was kicked.`))
-                .catch((err) => msg.channel.send('I cannot kick that user :('));
+                .then((member) => msg.channel.send(`${member} ถูกเตะออก.`))
+                .catch((err) => msg.channel.send('บอทไม่สามารถเตะสมาชิกคนนี้ได้ :('));
         } else {
-            msg.channel.send('That member was not found');
+            msg.channel.send('ไม่พบสมาชิก');
         }
     }
     async banUser(msg, args) {
         if (!msg.member.hasPermission('BAN_MEMBERS'))
-            return msg.reply("You do not have permissions to use that command");
-        if (args.length === 0) return msg.reply("Please provide an ID");
+            return msg.reply("คุณไม่ได้รับการอนุญาตให้ใช้คำสั่งนี้");
+        if (args.length === 0) return msg.reply("กรุณาใส่ ID");
         try {
             const user = await msg.guild.members.ban(args[0]);
-            msg.channel.send('User was banned successfully');
+            msg.channel.send('ผู้ใช้งานรายนี้ถูกแบนแล้ว');
         } catch (err) {
             console.log(err);
-            msg.channel.send('An error occured. Either I do not have permissions or the user was not found');
+            msg.channel.send('เกิดข้อผิดพลาดในการแบนผู้ใช้งาน');
         }
     }
 
