@@ -4,7 +4,7 @@ const music = new Play();
 let isActive = false;
 
 export default class Command {
-    command(client,msg,PREFIX_COMMAND) {
+    command(client, msg, PREFIX_COMMAND) {
         const [real_command, ...args] = msg.content
             .trim()
             .substring(PREFIX_COMMAND.length)
@@ -30,11 +30,26 @@ export default class Command {
             isActive = false;
             msg.channel.send('ฟังก์ชันตอบโต้กับผู้ใช้งานได้หยุดลง!');
         }
+        else if (real_command === 'kick') {
+            if (!msg.member.hasPermission('KICK_MEMBERS'))
+                return msg.reply('You do not have permissions to use that command');
+            if (args.length === 0)
+                return msg.reply('Please provide an ID');
+            const member = msg.guild.members.cache.get(args[0]);
+            if (member) {
+                member
+                    .kick()
+                    .then((member) => msg.channel.send(`${member} was kicked.`))
+                    .catch((err) => msg.channel.send('I cannot kick that user :('));
+            } else {
+                msg.channel.send('That member was not found');
+            }
+        }
         else {
             msg.reply("สามารถพิมพ์ $help เพื่อดูคำสั่งทั้งหมด");
         }
     }
-    GetIsActive(){
+    GetIsActive() {
         return isActive;
     }
 }
