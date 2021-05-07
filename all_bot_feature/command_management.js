@@ -4,7 +4,7 @@ const music = new Play();
 let isActive = false;
 
 export default class Command {
-    command(msg) {
+    command(msg,PREFIX_COMMAND) {
         const [real_command, ...args] = msg.content
             .trim()
             .substring(PREFIX_COMMAND.length)

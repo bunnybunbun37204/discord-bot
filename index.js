@@ -27,7 +27,7 @@ botnaja.on("message", (msg) => {
     msg.reply("อะหิ อะหิ");
   }
   if (msg.content.startsWith(PREFIX_COMMAND)) {
-    command_management.command(msg);
+    command_management.command(msg,PREFIX_COMMAND);
   }
   else{
     botnaja_reply.replyMsg(msg,command_management.GetIsActive());
