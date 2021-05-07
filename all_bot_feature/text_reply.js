@@ -13,14 +13,14 @@ const data_classifier = data => {
   }
 }
 
-const find_id_injson = (type) => {
+const find_id_injson = type => {
   if (type in memo) return memo[type];
   else {
-    for (let i = 0; i < data.length; i++) {
+    for (let id = 0; id < data.length; id++) {
       console.log('using for loop');
-      if (data[i]['name'] === type) {
-        memo[type] = i;
-        return i;
+      if (data[id]['name'] === type) {
+        memo[type] = id;
+        return id;
       }
     }
   }
