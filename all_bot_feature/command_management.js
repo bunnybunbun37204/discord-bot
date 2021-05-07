@@ -4,7 +4,7 @@ const music = new Play();
 let isActive = false;
 
 export default class Command {
-    command(msg,PREFIX_COMMAND) {
+    command(client,msg,PREFIX_COMMAND) {
         const [real_command, ...args] = msg.content
             .trim()
             .substring(PREFIX_COMMAND.length)
@@ -20,7 +20,7 @@ export default class Command {
             );
         }
         else if (real_command === 'play' || real_command === 'skip' || real_command === 'stop') {
-            music.execute(msg, args, real_command, botnaja);
+            music.execute(msg, args, real_command, client);
         }
         else if (real_command === 'activeBotReply') {
             isActive = true;
