@@ -2,8 +2,8 @@
 // Discord Bots
 import { Client } from 'discord.js';
 import dotenv from 'dotenv';
-import ReplyMSg from './all_bot_feature/text_reply';
-import Command from './all_bot_feature/command_management';
+import ReplyMSg from './all_bot_feature/text_reply.js';
+import Command from './all_bot_feature/command_management.js';
 dotenv.config();
 
 const botnaja = new Client();
