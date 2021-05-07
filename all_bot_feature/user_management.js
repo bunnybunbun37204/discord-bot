@@ -1,4 +1,12 @@
 export default class UserManagement {
+    command(msg, args) {
+        if (msg.content === 'kick') {
+            this.kickUser(msg, args);
+        }
+        else if (msg.content === 'band') {
+            this.banUser(msg, args);
+        }
+    }
     kickUser(msg, args) {
         if (!msg.member.hasPermission('KICK_MEMBERS'))
             return msg.reply('You do not have permissions to use that command');
