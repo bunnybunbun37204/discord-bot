@@ -7,11 +7,12 @@ const data = datas['type'];
 let memo = {};
 
 const data_classifier = data => {
+  console.log('Classifier function is working');
   for (let i = 0; i < data.length; i++) {
     whichX.addLabels(data[i]['name']);
     whichX.addData(data[i]['name'], data[i]['keywords']);
   }
-}
+};
 
 const find_id_injson = type => {
   if (type in memo) return memo[type];
@@ -24,12 +25,12 @@ const find_id_injson = type => {
       }
     }
   }
-}
+};
 
 const answer = id => {
   let ans = data[id]['answer'];
   return ans;
-}
+};
 
 data_classifier(data);
 
