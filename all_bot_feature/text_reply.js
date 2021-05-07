@@ -40,8 +40,8 @@ export default class ReplyMSg {
   }
   replyMsg(msg, isActive) {
     if (isActive) {
-      let type = whichX.classify(msg.content);
-      let ans_list = answer(find_id_injson(type));
+      const type = whichX.classify(msg.content);
+      const ans_list = answer(find_id_injson(type));
       const index = Math.floor(Math.random() * ans_list.length);
       msg.reply(ans_list[index]);
       console.log(memo);
