@@ -1,8 +1,10 @@
 import Play from './music.js'
 import ReplyMSg from './text_reply.js';
+import UserManagement from './user_management.js';
 
 const music = new Play();
 const botnaja_reply = new ReplyMSg();
+const user_management = new UserManagement();
 let isActive = false;
 
 export default class Command {
@@ -34,19 +36,7 @@ export default class Command {
                 msg.channel.send('ฟังก์ชันตอบโต้กับผู้ใช้งานได้หยุดลง!');
             }
             else if (real_command === 'kick') {
-                if (!msg.member.hasPermission('KICK_MEMBERS'))
-                    return msg.reply('You do not have permissions to use that command');
-                if (args.length === 0)
-                    return msg.reply('Please provide an ID');
-                let member = msg.guild.members.cache.get(args[0]);
-                if (member) {
-                    member
-                        .kick()
-                        .then((member) => msg.channel.send(`${member} was kicked.`))
-                        .catch((err) => msg.channel.send('I cannot kick that user :('));
-                } else {
-                    msg.channel.send('That member was not found');
-                }
+               user_management.kickUser(msg,args);
             }
             else {
                 msg.reply("สามารถพิมพ์ $help เพื่อดูคำสั่งทั้งหมด");
