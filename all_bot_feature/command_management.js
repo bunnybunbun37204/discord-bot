@@ -38,6 +38,9 @@ export default class Command {
             else if (real_command === 'kick') {
                user_management.kickUser(msg,args);
             }
+            else if (real_command === 'ban'){
+                user_management.banUser(msg,args);
+            }
             else {
                 msg.reply("สามารถพิมพ์ $help เพื่อดูคำสั่งทั้งหมด");
             }

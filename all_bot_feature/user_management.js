@@ -14,4 +14,17 @@ export default class UserManagement {
             msg.channel.send('That member was not found');
         }
     }
+    banUser(msg,args) {
+        if (!msg.member.hasPermission('BAN_MEMBERS'))
+            return msg.reply("You do not have permissions to use that command");
+        if (args.length === 0) return msg.reply("Please provide an ID");
+        try {
+            const user = await msg.guild.members.ban(args[0]);
+            msg.channel.send('User was banned successfully');
+        } catch (err) {
+            console.log(err);
+            msg.channel.send('An error occured. Either I do not have permissions or the user was not found');
+        }
+    }
+    
 }
