@@ -1,10 +1,12 @@
 import Play from './music.js'
 import ReplyMSg from './text_reply.js';
 import UserManagement from './user_management.js';
+import RoleManager from './role.js';
 
 const music = new Play();
 const botnaja_reply = new ReplyMSg();
-const user_management = new UserManagement();
+const user_manager = new UserManagement();
+const role_manager = new RoleManager();
 let isActive = false;
 
 export default class Command {
@@ -38,7 +40,10 @@ export default class Command {
                 msg.channel.send('ฟังก์ชันตอบโต้กับผู้ใช้งานได้หยุดลง!');
             }
             else if (real_command === 'kick' || real_command === 'ban') {
-                user_management.excute(msg, real_command, args);
+                user_manager.excute(msg, real_command, args);
+            }
+            else if (real_command === 'giverole' || real_command === 'removerole') {
+                role_manager.callback(msg, args);
             }
             else {
                 msg.reply("สามารถพิมพ์ $help เพื่อดูคำสั่งทั้งหมด");
