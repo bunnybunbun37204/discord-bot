@@ -25,6 +25,7 @@ export default class RoleManager {
             return;
         }
         const member = guild.members.cache.get(user.id);
+        console.log(member);
         member.roles.add(role);
         msg.reply(`that's now user have a "${roleName} role"`);
     }
