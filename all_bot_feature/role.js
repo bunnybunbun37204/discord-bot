@@ -30,5 +30,13 @@ export default class RoleManager {
                 msg.reply(`the user does not have "${roleName}" role`);
             }
         }
+        else if (command === 'hasrole'){
+            if(member.roles.cache.get(role.id)){
+                msg.reply(`the user has "${roleName} role"`);
+            }
+            else{
+                msg.reply(`the user does not have "${roleName}" role`);
+            }
+        }
     }
 }

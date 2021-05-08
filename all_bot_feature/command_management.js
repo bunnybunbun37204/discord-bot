@@ -42,7 +42,7 @@ export default class Command {
             else if (real_command === 'kick' || real_command === 'ban') {
                 user_manager.excute(msg, real_command, args);
             }
-            else if (real_command === 'giverole' || real_command === 'removerole') {
+            else if (real_command === 'giverole' || real_command === 'removerole' || real_command === 'hasrole') {
                 role_manager.excute(msg, real_command, args);
             }
             else {
