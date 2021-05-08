@@ -43,7 +43,7 @@ export default class Command {
                 user_manager.excute(msg, real_command, args);
             }
             else if (real_command === 'giverole' || real_command === 'removerole') {
-                role_manager.callback(msg, args);
+                role_manager.excute(msg, real_command, args);
             }
             else {
                 msg.reply("สามารถพิมพ์ $help เพื่อดูคำสั่งทั้งหมด");

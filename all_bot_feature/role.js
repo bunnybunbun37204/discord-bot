@@ -1,6 +1,14 @@
 export default class RoleManager {
     permission = "ADMINISTRATOR";
-    callback(msg, args) {
+    excute(msg,command, args){
+        if(command === 'giverole'){
+            this.giveRole(msg,args);
+        }
+        else if(command === 'removerole'){
+            //
+        }
+    }
+    giveRole(msg, args) {
         const user = msg.mentions.user.first();
         if (!user) {
             msg.reply('Plz specify someone to give a role');
