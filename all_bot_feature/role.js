@@ -9,7 +9,7 @@ export default class RoleManager {
         }
     }
     giveRole(msg, args) {
-        const user = msg.mentions.user.first();
+        const user = msg.mentions.users.first();
         if (!user) {
             msg.reply('Plz specify someone to give a role');
             return;
