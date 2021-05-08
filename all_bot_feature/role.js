@@ -9,7 +9,7 @@ export default class RoleManager {
         args.shift();
         const roleName = args.join(' ');
         const { guild } = msg;
-        const role = guild.role.cache.find((role) => {
+        const role = guild.roles.cache.find((role) => {
             return role.name === roleName;
         });
         if(!role){
