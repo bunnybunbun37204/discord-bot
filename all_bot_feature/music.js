@@ -98,6 +98,7 @@ const video_player = async (guild, song) => {
         .on('finish', () => {
             song_queue.songs.shift();
             video_player(guild, song_queue.songs[0]);
+            arr_song.splice(0, 1);
         });
     await song_queue.text_channel.send(`🎶 กำลังเล่น **${song.title}**`)
 
@@ -122,6 +123,7 @@ const stop_song = (msg, server_queue) => {
     catch(e) {
         console.log(e.message);
     }
+    delete_queue(msg, arr_song, 0);
     msg.channel.send('เพลงถูกหยุดเล่นแล้ว');
 }
 
@@ -135,5 +137,4 @@ const delete_queue = (msg, q, id) => {
     msg.channel.send(`Skip Song name ${q[id]}`);
     q.splice(id, 1);
     show_queue(msg, q)
-    
 }
